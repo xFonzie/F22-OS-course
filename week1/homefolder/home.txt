@@ -1,0 +1,12 @@
+total 44
+drwxrwxr-x 4 danil danil 4096 сен  6 20:29 week1
+drwx------ 4 danil danil 4096 сен  6 19:43 snap
+drwxrwxr-x 3 danil danil 4096 авг 31 17:47 someshit
+drwxr-xr-x 2 danil danil 4096 авг 31 17:12 Desktop
+drwxr-xr-x 2 danil danil 4096 авг 31 17:12 Documents
+drwxr-xr-x 2 danil danil 4096 авг 31 17:12 Downloads
+drwxr-xr-x 2 danil danil 4096 авг 31 17:12 Music
+drwxr-xr-x 2 danil danil 4096 авг 31 17:12 Pictures
+drwxr-xr-x 2 danil danil 4096 авг 31 17:12 Public
+drwxr-xr-x 2 danil danil 4096 авг 31 17:12 Templates
+drwxr-xr-x 2 danil danil 4096 авг 31 17:12 Videos

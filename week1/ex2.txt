@@ -1,0 +1,5 @@
+sudo apt -y install build-essential
+clear
+cd ~
+cd week1
+cat ex1.txt
