@@ -1,0 +1,1 @@
+In the first case, the total number of created processes is equal to 8, in the second case - 16
