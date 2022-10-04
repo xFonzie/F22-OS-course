@@ -1,0 +1,21 @@
+664579
+real 9.12
+user 9.12
+sys 0.00
+664579
+real 5.77
+user 9.18
+sys 0.02
+664579
+real 3.29
+user 9.74
+sys 0.01
+664579
+real 1.82
+user 13.47
+sys 0.02
+664579
+real 1.52
+user 18.06
+sys 0.07
+

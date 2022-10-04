@@ -1,0 +1,2 @@
+Similarly to exercise 3, we get high execution time with few threads (9.35 seconds for 1 thread) and low time with big amount of threads (1.80 seconds for 100 threads).
+This show us that several threads doing same task simultaniously for different data will lead to time optimization.

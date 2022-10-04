@@ -1,0 +1,3 @@
+With one thread the program runs in 9.12 seconds, with the raise of number of threads, this time deacreases up to 1.52 seconds with 100 threads.
+We can conclude that several threads working simultaneously make the operating time deacrease.
+
