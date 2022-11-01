@@ -1,0 +1,6 @@
+-rw-rw-rw- 1 danil danil 6 ноя  1 21:25 _ex3.txt
+-rwxrw-rwx 1 danil danil 6 ноя  1 21:25 _ex3.txt
+
+660 means rw-rw---- in other words owner and group can read and write, others have no access to the file.
+775 means rwxrwxr-x in other words owner and group have full access to the file, others can read and execute.
+777 means rwxrwxrwx in other words everybody have full access.
