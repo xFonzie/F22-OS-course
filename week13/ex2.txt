@@ -1,0 +1,8 @@
+Recovery:
+It is applicable if the resourse can be taken away safely for the process or the process can be killed or returned to the checkpoint harmlessly.
+
+Prevention:
+Is applicable in case one have access to the source code, he might use one of the preventhion techniques. However, often it might be impossible to implement.
+
+Avoidance:
+Is applicable if the system have certain information in advance, such as the moment when specific resourse will be requested.
