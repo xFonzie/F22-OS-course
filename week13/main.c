@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define N_processes 5
-#define M_resources 3
+#define N_MAX 50
+#define M_MAX 50
 
 struct Data {
-    int E[M_resources];
-    int A[M_resources];
-    int C[N_processes][M_resources];
-    int R[N_processes][M_resources];
+    int E[M_MAX];
+    int A[M_MAX];
+    int C[N_MAX][M_MAX];
+    int R[N_MAX][M_MAX];
 };
 
 // returns amount of deadlocked processes
-int deadlocked_processes(struct Data data) {
+int deadlocked_processes(struct Data data, int N_processes, int M_resources) {
 
-    int finished_processes[N_processes] = {};
+    int finished_processes[N_MAX] = {};
 
     // try every process to finish
     while (1) {
@@ -65,10 +66,20 @@ int main()
     FILE* input = fopen("input.txt", "r");
 
     struct Data data;
+    int N_processes = 0, M_resources = 0;
+    char s[(M_MAX + N_MAX) * 18];
 
-    // read E
-    for (int i = 0; i < M_resources; i++) {
-        fscanf(input, "%d ", &data.E[i]);
+    // read E and count M_resources
+    fgets(s, (M_MAX + N_MAX) * 18, input);
+    char *c = s;
+    while (*c != '\0') {
+        int k = 0;
+        while (*c != ' ' && *c != '\0') {
+            k = k * 10 + (*c - '0');
+            c++;
+        }
+        c++;
+        data.E[M_resources++] = k;
     }
 
     // read A
@@ -76,11 +87,23 @@ int main()
         fscanf(input, "%i ", &data.A[i]);
     }
 
-    // read C
-    for (int i = 0; i < N_processes; i++) {
+    // empty line
+    fgets(s, (M_MAX + N_MAX) * 18, input);
+    s[0] = '1';
+
+    // read C and count N_processes
+    while (s[0] != '\n') {
+        fgets(s, (M_MAX + N_MAX) * 18, input);
         for (int j = 0; j < M_resources; j++) {
-            fscanf(input, "%i ", &data.C[i][j]);
+            int k = 0;
+            while (*c != ' ' && *c != '\0') {
+                k = k * 10 + (*c - '0');
+                c++;
+            }
+            c++;
+            data.C[N_processes][j] = k;
         }
+        N_processes++;
     }
 
     // read R
@@ -91,7 +114,7 @@ int main()
     }
 
     int n;
-    if ( n = deadlocked_processes(data) ) {
+    if ( (n = deadlocked_processes(data, N_processes, M_resources)) ) {
         printf("The deadlock was detected! %i process(es) is(are) deadlocked.\n", n);
     } else {
         printf("No deadlock was detected.");
