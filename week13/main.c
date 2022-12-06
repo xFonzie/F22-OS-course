@@ -35,7 +35,6 @@ int deadlocked_processes(struct Data data, int N_processes, int M_resources) {
                 // if runnable, finish current process
                 if (is_runnable) {
                     was_finished = 1;
-                    printf("%i\n", n);
                     finished_processes[n] = 1;
 
                     // change allocated resources to availible
@@ -74,7 +73,7 @@ int main()
     char *c = s;
     while (*c != '\0') {
         int k = 0;
-        while (*c != ' ' && *c != '\0') {
+        while (*c != ' ' && *c != '\0' && *c != '\n') {
             k = k * 10 + (*c - '0');
             c++;
         }
@@ -94,9 +93,10 @@ int main()
     // read C and count N_processes
     while (s[0] != '\n') {
         fgets(s, (M_MAX + N_MAX) * 18, input);
+        c = s;
         for (int j = 0; j < M_resources; j++) {
             int k = 0;
-            while (*c != ' ' && *c != '\0') {
+            while (*c != ' ' && *c != '\0' && *c != '\n') {
                 k = k * 10 + (*c - '0');
                 c++;
             }
